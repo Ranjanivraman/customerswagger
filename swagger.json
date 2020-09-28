@@ -1,0 +1,19 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "Customer API",
+    "description" : "This is a customer api created using swagger",
+    "version" : "1.0.0",
+    "contact" : {
+      "name" : "Ranjani",
+      "url" : "http://",
+      "email" : "ranjani.vraman@gmail.com"
+    },
+    "license" : {
+      "name" : "Apache '2.0'"
+    }
+  },
+  "paths" : {
+    "/customer" : null
+  }
+}
