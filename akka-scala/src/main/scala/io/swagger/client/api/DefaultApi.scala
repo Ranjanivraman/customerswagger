@@ -32,6 +32,18 @@ object DefaultApi {
       .withQueryParam("customerId", customerId)
       .withSuccessResponse[Customer](200)
       .withErrorResponse[Unit](404)
+        /**
+   * Add customer
+   * 
+   * Expected answers:
+   *   code 200 : Int (response for customer)
+   * 
+   * @param cusotmerJson customer details in json
+   */
+  def postCustomer(cusotmerJson: Customer): ApiRequest[Int] =
+    ApiRequest[Int](ApiMethods.POST, "https://localhost", "/customer", "application/json")
+      .withBody(cusotmerJson)
+      .withSuccessResponse[Int](200)
       
 
 }

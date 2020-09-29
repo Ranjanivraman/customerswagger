@@ -67,6 +67,7 @@ All URIs are relative to *https://localhost*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DefaultApi* | **getCustomer** | **GET** /customer | Reads a customer data
+*DefaultApi* | **postCustomer** | **POST** /customer | Posts a customer data
 
 
 ## Documentation for Models
