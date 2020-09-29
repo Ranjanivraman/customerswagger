@@ -14,6 +14,53 @@
     }
   },
   "paths" : {
-    "/customer" : null
+    "/customer" : {
+      "get" : {
+        "summary" : "Reads a customer data",
+        "operationId" : "getCustomer",
+        "description" : "Get customer",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "customerId",
+          "description" : "?customerId=",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "response for customer",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "customerId" : {
+                  "type" : "integer"
+                },
+                "accountValue" : {
+                  "type" : "number"
+                },
+                "active" : {
+                  "type" : "boolean"
+                },
+                "contacts" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object",
+                    "properties" : {
+                      "name" : {
+                        "type" : "string"
+                      },
+                      "email" : {
+                        "type" : "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
