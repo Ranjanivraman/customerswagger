@@ -62,7 +62,7 @@ libraryDependencies += "io.swagger" % "swagger-client" % "1.0.0"
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *http://missguided.admin.com/customersupport/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

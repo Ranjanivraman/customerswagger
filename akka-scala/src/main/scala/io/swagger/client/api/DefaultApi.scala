@@ -28,7 +28,7 @@ object DefaultApi {
    * @param customerId ?customerId&#x3D;
    */
   def getCustomer(customerId: Int): ApiRequest[Customer] =
-    ApiRequest[Customer](ApiMethods.GET, "https://localhost", "/customer", "application/json")
+    ApiRequest[Customer](ApiMethods.GET, "http://missguided.admin.com/customersupport/v1", "/customer", "application/json")
       .withQueryParam("customerId", customerId)
       .withSuccessResponse[Customer](200)
       .withErrorResponse[Unit](404)
@@ -42,7 +42,7 @@ object DefaultApi {
    * @param cusotmerJson customer details in json
    */
   def postCustomer(cusotmerJson: Customer): ApiRequest[Int] =
-    ApiRequest[Int](ApiMethods.POST, "https://localhost", "/customer", "application/json")
+    ApiRequest[Int](ApiMethods.POST, "http://missguided.admin.com/customersupport/v1", "/customer", "application/json")
       .withBody(cusotmerJson)
       .withSuccessResponse[Int](200)
       .withErrorResponse[Unit](405)
