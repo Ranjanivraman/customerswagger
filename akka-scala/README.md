@@ -71,8 +71,8 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [InlineResponse200](InlineResponse200.md)
- - [InlineResponse200Contacts](InlineResponse200Contacts.md)
+ - [Customer](Customer.md)
+ - [CustomerContacts](CustomerContacts.md)
 
 
 ## Documentation for Authorization

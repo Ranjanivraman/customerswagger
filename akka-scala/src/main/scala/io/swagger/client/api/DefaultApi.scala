@@ -11,7 +11,7 @@
  */
 package io.swagger.client.api
 
-import io.swagger.client.model.InlineResponse200
+import io.swagger.client.model.Customer
 import io.swagger.client.core._
 import io.swagger.client.core.CollectionFormats._
 import io.swagger.client.core.ApiKeyLocations._
@@ -22,14 +22,16 @@ object DefaultApi {
    * Get customer
    * 
    * Expected answers:
-   *   code 200 : InlineResponse200 (response for customer)
+   *   code 200 : Customer (response for customer)
+   *   code 404 :  (employee with this id doesnot exist)
    * 
    * @param customerId ?customerId&#x3D;
    */
-  def getCustomer(customerId: Int): ApiRequest[InlineResponse200] =
-    ApiRequest[InlineResponse200](ApiMethods.GET, "https://localhost", "/customer", "application/json")
+  def getCustomer(customerId: Int): ApiRequest[Customer] =
+    ApiRequest[Customer](ApiMethods.GET, "https://localhost", "/customer", "application/json")
       .withQueryParam("customerId", customerId)
-      .withSuccessResponse[InlineResponse200](200)
+      .withSuccessResponse[Customer](200)
+      .withErrorResponse[Unit](404)
       
 
 }
