@@ -31,36 +31,74 @@
           "200" : {
             "description" : "response for customer",
             "schema" : {
-              "type" : "object",
-              "properties" : {
-                "customerId" : {
-                  "type" : "integer"
-                },
-                "accountValue" : {
-                  "type" : "number"
-                },
-                "active" : {
-                  "type" : "boolean"
-                },
-                "contacts" : {
-                  "type" : "array",
-                  "items" : {
-                    "type" : "object",
-                    "properties" : {
-                      "name" : {
-                        "type" : "string"
-                      },
-                      "email" : {
-                        "type" : "string"
-                      }
-                    }
-                  }
-                }
+              "$ref" : "#/definitions/Customer"
+            }
+          },
+          "404" : {
+            "description" : "employee with this id doesnot exist"
+          }
+        }
+      },
+      "post" : {
+        "summary" : "Posts a customer data",
+        "operationId" : "postCustomer",
+        "description" : "Add customer",
+        "produces" : [ "text/plain" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "cusotmer json",
+          "description" : "customer details in json",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Customer"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "response for customer",
+            "schema" : {
+              "type" : "integer"
+            }
+          },
+          "405" : {
+            "description" : "Input invaid"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Customer" : {
+      "type" : "object",
+      "properties" : {
+        "customerId" : {
+          "type" : "integer"
+        },
+        "accountValue" : {
+          "type" : "number"
+        },
+        "active" : {
+          "type" : "boolean"
+        },
+        "contacts" : {
+          "type" : "array",
+          "items" : {
+            "type" : "object",
+            "properties" : {
+              "name" : {
+                "type" : "string"
+              },
+              "email" : {
+                "type" : "string"
               }
             }
           }
         }
       }
     }
-  }
+  },
+  "host" : "missguided.admin.com",
+  "basePath" : "/customersupport/v1",
+  "schemes" : [ "http", "https" ]
 }
