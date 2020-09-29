@@ -37,6 +37,7 @@ object DefaultApi {
    * 
    * Expected answers:
    *   code 200 : Int (response for customer)
+   *   code 405 :  (Input invaid)
    * 
    * @param cusotmerJson customer details in json
    */
@@ -44,6 +45,7 @@ object DefaultApi {
     ApiRequest[Int](ApiMethods.POST, "https://localhost", "/customer", "application/json")
       .withBody(cusotmerJson)
       .withSuccessResponse[Int](200)
+      .withErrorResponse[Unit](405)
       
 
 }
